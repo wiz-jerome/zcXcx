@@ -1,0 +1,27 @@
+/* pages/ticket/index.wxss */
+
+.pagebox{
+  width:100%;
+  height:100%;
+  position: relative;
+  background:#b9151c;
+}
+.pagebox image{
+  width:100%;
+  display:inline-block;
+  height:1200px;
+}
+.ewm{
+  
+  width: 280rpx !important;
+  height: 280rpx !important;
+  position: absolute;
+  left:50%;
+  margin-left:-140rpx;
+  top:39%;
+}
+.ewm>image{
+  width:100%;
+  width: 280rpx !important;
+  height: 280rpx !important;
+}

@@ -1,0 +1,8 @@
+<view class='dialog' catchtouchmove="ture">
+  <view class='mask'>
+    <view class='content'>
+      <view></view>
+    </view>
+    <image src='../../asset/img/closeBtn.png' class='closeBtn' bindtap='closeDialog'></image>
+  </view>
+</view>

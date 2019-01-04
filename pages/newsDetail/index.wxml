@@ -1,0 +1,65 @@
+<view class='title'>{{title}}</view>
+<view class='member'>
+  <image src='{{member.memberImg}}' class='memberImg'></image>
+  <view class='memberName'>{{member.memberName}}</view>
+</view>
+<view class='newsContent'>
+<rich-text nodes='{{videoStr}}'></rich-text>
+</view>
+<!--问题  -->
+<view class='questionBox'>
+  <view class='question' wx:for='{{questionList}}' wx:for-item="questionItem" wx:for-index="i">
+    <view class='questionName'>
+      <text class='questionType' wx:if="{{questionItem.questionType==0 || questionItem.questionType==1}}">单选</text>
+      <text class='questionType' wx:else>多选</text>
+      {{questionItem.name}}
+    </view>
+    <!--单选题样式  -->
+    <view class='answerItems' wx:if="{{questionItem.questionType==0 || questionItem.questionType==3}}">
+      <view class='answerItem' wx:for="{{questionItem.answerList}}" wx:for-item="answerItem" wx:for-index="j" bindtap='checkItem' data-questionIndex="{{i}}" data-answerIndex='{{j}}'>
+        <view class='idot idot1' wx:if="{{questionItem.isChecked==j}}"></view>
+        <view class='idot idot0' wx:else></view>
+        <view class='answerName'>{{answerItem.name}}</view>
+      </view>
+    </view>
+    <!--多选题样式  -->
+    <view class='answerItems' wx:if="{{questionItem.questionType==1 || questionItem.questionType==2 ||  questionItem.questionType==4}}">
+      <view class='answerItem' wx:for="{{questionItem.answerList}}" wx:for-item="answerItem" wx:for-index="j" bindtap='checkMultyItem' data-questionIndex="{{i}}" data-answerIndex='{{j}}'>
+        <view class='idot2 idot1' wx:if="{{answerItem.isChecked}}"></view>
+        <view class='idot2 idot0' wx:else></view>
+        <view class='answerName'>{{answerItem.name}}</view>
+      </view>
+    </view>
+    
+  </view>
+</view>
+<view class='joinInfo'>
+  <view class='join actualjoin'>
+    <!-- <image src='../../asset/img/iconUser.png'></image> -->
+    <view class='txt'>
+      <view class='Num'>{{actualUser}}</view>
+      <view class='infoTxt'>已完成人数</view>
+    </view>
+  </view>
+  <view class='join totaljoin'>
+    <!-- <image src='../../asset/img/iconUser.png'></image> -->
+    <view class='txt'>
+      <view class='Num'>{{maxUser}}</view>
+      <view class='infoTxt'>总人数</view>
+    </view>
+  </view>
+  <view class='join award'>
+    <!-- <image src='../../asset/img/iconMoney.png'></image> -->
+    <view class='txt'>
+      <view class='Num'>10.00元</view>
+      <view class='infoTxt'>奖励 元/人</view>
+    </view>
+  </view>
+</view> 
+<!-- <view class='warnInfo'>您所参与的问卷答完后将不可再次参与，请认真答题</view> -->
+<!--下载提示  -->
+<view class='downloadBox'>
+  <view class='downloadAppDetail' bindtap='downApp'>参与活动</view> 
+</view>
+<!--下载弹窗  -->
+<dialog wx:if="{{showDialog}}" bindcloseDialogF="closeDialogf"></dialog>

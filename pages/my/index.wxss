@@ -1,0 +1,58 @@
+/* pages/my/index.wxss */
+/* page{
+  border-top: 4rpx solid #979797;
+} */
+.headBox{
+  height:240rpx;
+  /* background: #FBC873; */
+  display: flex;
+  align-items: center;
+  padding-left: 34rpx;
+  border-bottom: 1rpx solid #D8D8D8;
+}
+.headBox .userImg{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.headBox .userName{
+  font-size: 36rpx;
+  color: #4A4A4A;
+  margin-top: 12rpx;
+  background: none;
+  padding: 0;
+  line-height: 40rpx;
+}
+.userBox{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.loginTxt{
+  margin-top: 12rpx;
+}
+.infoBox{
+}
+.infoBox .infoLine{
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #D8D8D8;
+  height: 96rpx;
+  align-items: center;
+}
+.infoBox .infoLine .left{
+  display: flex;
+  align-items: center;
+}
+.infoBox .infoLine .left>image{
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 14rpx;
+}   
+
+.txt28{
+  font-size: 28rpx;
+}

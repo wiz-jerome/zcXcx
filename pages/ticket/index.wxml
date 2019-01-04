@@ -1,0 +1,6 @@
+<view class="pagebox">
+  <image src="http://zhaocai-image.oss-cn-hangzhou.aliyuncs.com/image/332584f3-e268-4f4c-b021-4b406570815b.png" alt=""></image>
+  <view class='ewm'>
+    <image class="rq_code" src='{{CECewm}}'></image>
+  </view>
+</view>

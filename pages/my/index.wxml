@@ -1,0 +1,54 @@
+<!--pages/my/index.wxml-->
+<view>
+  <view class='headBox'>
+     <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+     <block wx:else> -->
+      
+      <button class='userName userBox' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        <image class='userImg' src="{{userInfo.avatarUrl}}"></image> 
+        <text  class='loginTxt'> 未登录 </text>
+      </button>
+      <view  wx:else class='userBox'>
+        <image class='userImg' src="{{userInfo.avatarUrl}}"></image> 
+        <text class='userName'>{{userInfo.nickName}}</text>
+      </view>
+      
+     <!-- </block> -->
+  </view>  
+   <view class='infoBox'>
+    <!-- <view class='infoLine' bindtap='toTicketDetail' wx:if="{{haveCEC}}">
+      <view class='left'>
+         <image src='../../asset/img/cecTicket.png'></image> 
+         <text class='txt28'>我的CEC票务
+         </text>
+      </view>
+      <view class='right' style='display:flex;align-items:center;'>
+        <text class='txt28'>查看详情</text>
+        <image src='../../asset/img/todetail.png' style='width:32rpx;height:32rpx;'></image>
+      </view>
+    </view> -->
+    <view class='infoLine' bindtap='phoneCall'>
+      <view class='left'>
+         <image src='../../asset/img/kefu.png'></image> 
+         <text class='txt28'>联系客服</text>
+      </view>
+      <text class='txt28 right'>021-56669882</text>
+    </view>
+    <view class='infoLine'>
+      <view class='left'>
+         <image src='../../asset/img/email.png'></image> 
+         <text class='txt28'>企业邮箱</text>
+      </view>
+      <text class='txt28 right'>yuezhi@jinxunwenhua.cn</text>
+    </view>
+    <!-- <view class='infoLine'>
+      <view class='left'>
+         <image src='../../asset/img/logo.png'></image> 
+         <text class='txt28'>微信公众号</text>
+      </view>
+      <text class='txt28 right'>阅值APP</text>
+    </view> -->
+  </view> 
+</view> 
+<view class='downloadApp' bindtap='downApp'>下载APP参与活动，即可领取10元红包</view>
+<dialog wx:if="{{showDialog}}" bindcloseDialogF="closeDialogf"></dialog>

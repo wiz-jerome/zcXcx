@@ -1,0 +1,40 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+
+
+
+button::after {
+  border: 0;
+} 
+
+/*下拉加载  */
+.pullBox{
+  font-size: 28rpx;
+  color: #666;
+}
+.pullBox .loadBox{
+  text-align: center;
+}
+.downloadApp{
+  min-width: 700rpx; 
+  height: 80rpx;
+  background: #FFB433;
+  border-radius: 40rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 50%;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  transform: translate(-50%,0)
+}

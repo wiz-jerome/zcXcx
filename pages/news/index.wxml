@@ -1,0 +1,58 @@
+<!--pages/news/index.wxml-->
+<view class='newsListBox'>
+  <view class='newsBox' wx:for="{{newsList}}" data-kid='{{item.kid}}' bindtap='goDetail'>
+    <!--商家信息  -->
+    <view class='memberBox'>
+      <view class='img'>
+        <image src='{{item.memberImg}}'></image>
+      </view>
+      <view class='membername'>{{item.memberName}}</view>
+    </view>
+    <view class='con'>
+      <image class='imgBox' mode='aspectFit' src='{{item.activityImage1}}'></image>
+      <view class='txtBox'>
+        <view class='title'>{{item.name}}</view>
+        <view class='joinBox'>
+          <view class='bar'>
+            <view class='joinBar' style='width:{{item.joinpercent}}'></view>
+          </view>
+          <view class='percent'>{{item.joinpercent}}</view>
+        </view>
+        <view class='info'>
+          <view class='time'>剩余时间：<text>{{item.lastTime}}天</text></view>
+        </view>
+      </view> 
+    </view>
+    <!-- 已结束图标 -->
+    <image class='overImg' wx:if="{{item.lastTime===0}}" src='../../asset/img/overImg.png'></image>
+  </view>
+
+  <!--下拉刷新-->
+  <view class='pullBox' wx:if="{{isLoadingMore}}">
+    <view class='loadBox loadMore' wx:if="{{isMoreData}}">正在加载...</view>
+    <view class='loadBox noMoe' wx:else>全部加载完成</view>
+  </view>                            
+  <!--downlogo  -->
+  <image class='downlogo' src='../../asset/img/downlogo.png' bindtap='downApp'></image>
+  <!-- <button class='getTicketBtn' wx:else  open-type="getUserInfo" bindgetuserinfo="getTicket">
+    <image class='getTicketImg'  src='../../asset/img/getTicket.png'></image>
+  </button> -->
+</view>
+
+<!--下载弹窗  -->
+<dialog wx:if="{{showDialog}}" bindcloseDialogF="closeDialogf"></dialog>
+<!--获取票弹窗 -->
+<view class='dialogGetticket' wx:if="{{showDialogTicket}}" catchtouchmove="ture">
+  <!-- <view class='ticketBox' style='background: url(../../asset/img/ticket.png) no-repeat center;'> -->
+  <view class='ticketBox'>
+
+    <image src='https://zhaocai-image.oss-cn-hangzhou.aliyuncs.com/file/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20181019171738.png' style='height:950rpx;width:585rpx;position:absolute;top:0;left:0;'>
+    <!-- <image src='../../asset/img/ticket.png' style='height:950rpx;width:585rpx;position:absolute;top:0;left:0;'> -->
+      <image class='ewm' src='{{ewmSrc}}'></image>
+    </image> 
+  </view>
+   
+  <view class='closeBtn' bindtap='closeTicket'>
+    <image src='../../asset/img/closeBtn.png'></image>
+  </view>
+</view>

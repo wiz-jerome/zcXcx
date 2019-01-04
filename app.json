@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/news/index",
+    "pages/ticket/index",
+    "pages/index/index",
+    "pages/my/index",
+    "pages/newsDetail/index"
+  ],
+  "window":{
+    "navigationBarTitleText": "阅值",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor":"#ffffff",
+    "selectedColor": "#FFB433",
+    "list": [
+      {
+        "pagePath": "pages/news/index",
+        "text": "资讯",
+        "iconPath": "asset/img/news.png",
+        "selectedIconPath": "asset/img/newsSelected.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "asset/img/my.png",
+        "selectedIconPath": "asset/img/mySelected.png"
+      }
+    ]
+  }
+}
